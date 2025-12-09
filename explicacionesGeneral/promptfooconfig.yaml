@@ -1,19 +1,41 @@
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
-description: 'Getting started'
-# Optionally set API keys here instead of exporting environment variables.
-# Never commit real keys to source control.
-# env:
-#   OPENAI_API_KEY: sk-...
+description: 'Evaluación con 30 prompts'
+
 prompts:
-  - 'Convert this English to {{language}}: {{input}}'
-  - 'Translate to {{language}}: {{input}}'
+  - 'Prompt 1: Un principiante de JavaScript necesita conocer los tres contextos principalesen los que se ejecuta el código, más allá del navegador. {{language}}: {{input}}'
+  - 'Prompt 2: Un estudiante de programación se encuentra confundido y necesita que se le explique la diferencia principal entre los operadores de igualdad (==) y estricta (===). {{language}}: {{input}}'
+  - 'Prompt 3: Un desarrollador novato necesita identificar los tres tipos principales de declaración de variables que existen en JavaScript. {{language}} manteniendo el significado: {{input}}'
+  - 'Prompt 4: Un estudiante no logra distinguir la diferencia de alcance (scope) entre `var` y let al revisar código. {{language}}: {{input}}'
+  - 'Prompt 5: Una persona que recién empieza necesita saber cuándo es apropiado usar const a pesar de que los objetos declarados con ella pueden cambiar. {{language}}: {{input}}'
+  - 'Prompt 6: Un programador en formación necesita nombrar al menos tres tipos de datos primitivos en JavaScript. {{language}}: {{input}}'
+  - 'Prompt 7: Un estudiante se encuentra depurando código y necesita saber qué valor devuelve el operador typeof cuando se aplica a una variable no definida. {{language}}: {{input}}'
+  - 'Prompt 8: Un nuevo miembro de un equipo necesita saber cómo se escribe un comentario de una sola línea en JavaScript. {{language}}: {{input}}'
+  - 'Prompt 9: Un estudiante está asombrado por operaciones entre diferentes tipos de datos y necesita entender qué es la coerción de tipos. {{language}}: {{input}}'
+  - 'Prompt 10: Un programador junior necesita saber qué son los valores truthy y falsy en JavaScript para escribir lógica condicional. {{language}}: {{input}}'
+  - 'Prompt 11: Un estudiante necesita tomar decisiones en su programa y debe identificar qué estructura de control se utiliza para ejecutar código si una condición es verdadera. {{language}}: {{input}}'
+  - 'Prompt 12: Un nuevo desarrollador necesita saber cuál es la diferencia clave entre un bucle for y un bucle while para elegir la herramienta correcta. {{language}}: {{input}}'
+  - 'Prompt 13: Un estudiante necesita detener un bucle inmediatamente y se pregunta qué hace la instrucción break dentro de él. {{language}}: {{input}}'
+  - 'Prompt 14: Un principiante necesita escribir código reutilizable y requiere saber cómo se declara una función tradicional en JavaScript. {{language}}: {{input}}'
+  - 'Prompt 15: Un estudiante necesita que el resultado de un cálculo esté disponible fuera de una función y necesita saber qué palabra clave se usa dentro de una función para devolver un valor. {{language}}: {{input}}'
+  - 'Prompt 16: Un programador novato necesita que se le aclare cuál es la diferencia entre un parámetro y un argumento de una función. {{language}}: {{input}}'
+  - 'Prompt 17: Un estudiante ve funciones con sintaxis => y necesita saber qué es una función flecha (arrow function) y por qué se usa. {{language}}: {{input}}'
+  - 'Prompt 18: Un desarrollador principiante se enfrenta a errores de acceso a variables y necesita que se le defina qué es el ámbito (scope) de una variable. {{language}}: {{input}}'
+  - 'Prompt 19: Un estudiante necesita que se le explique qué es el concepto de hoisting (elevación), ya que ve código donde se usa una variable antes de declararse. {{language}}: {{input}}'
+  - 'Prompt 20: Un programador junior ha escrito una función que no devuelve nada y necesita saber qué ocurre si una función no tiene una instrucción return explícita. {{language}}: {{input}}'
+  - 'Prompt 21: Un estudiante necesita organizar una lista de elementos y necesita una definición clara de qué es un Array en JavaScript. {{language}}: {{input}}'
+  - 'Prompt 22: Un programador junior tiene dudas sobre el índice y necesita saber cómo se accede al tercer elemento de un array llamado lista. {{language}}: {{input}}'
+  - 'Prompt 23: Un estudiante necesita añadir un nuevo dato al final de una lista y necesita identificar qué método de array se usa para este fin. {{language}}: {{input}}'
+  - 'Prompt 24: Un principiante necesita eliminar el último elemento de una lista y busca saber qué método de array se usa para eliminarlo. {{language}}: {{input}}'
+  - 'Prompt 25: Un estudiante está listo para modelar entidades complejas y necesita una definición clara de qué es un Objeto en JavaScript. {{language}}: {{input}}'
+  - 'Prompt 26: Un programador junior necesita extraer el valor de la propiedad nombre de un objeto usuario y necesita saber cómo se accede usando la notación de punto. {{language}}: {{input}}'
+  - 'Prompt 27: Un estudiante necesita una herramienta básica para depurar y verificar valores, y pregunta qué hace el método `console.log(). {{language}}: {{input}}'
+  - 'Prompt 28: Un programador principiante comienza a interactuar con HTML y necesita saber qué significan las siglas DOM. {{language}}: {{input}}'
+  - 'Prompt 29: Un estudiante necesita modificar un elemento HTML específico y necesita saber qué método utilizas para seleccionar un elemento HTML por su atributo id. {{language}}: {{input}}'
+  - 'Prompt 30: Un principiante está aprendiendo a hacer que las páginas web sean interactivas y necesita saber qué son los eventos en el contexto del DOM {{language}}: {{input}}'
 
 providers:
   - openai:gpt-5
   - openai:gpt-5-mini
-  # Or setup models from other providers
-  # - anthropic:messages:claude-sonnet-4-5-20250929
-  # - vertex:gemini-2.5-pro
 
 tests:
   - vars:
@@ -21,10 +43,10 @@ tests:
       input: Hello world
     assert:
       - type: contains
-        value: 'Bonjour le monde'
+        value: 'Bonjour'
   - vars:
       language: Spanish
       input: Where is the library?
     assert:
       - type: icontains
-        value: 'Dónde está la biblioteca'
+        value: 'Dónde está'
